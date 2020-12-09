@@ -44,8 +44,9 @@
     align-items: flex-start;
     .col-left{
       width: 100%;
-    .contact-us {
-      padding: 0 8rem 2rem 0;
+      .contact-us{
+        padding-bottom:2rem;
+
       .full-width {
         display: flex;
         padding: 6px 0;
@@ -93,7 +94,7 @@
         border-radius: 2px;
       }
     }
-  }
+  }}
 .col-right{
   width: 100%;
 }
@@ -138,5 +139,6 @@ h6 {
   color: white;
   margin-right: 5px;
 }
-}
-}
+
+  }
+
