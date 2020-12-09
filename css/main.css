@@ -1,0 +1,733 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+   * A better looking default horizontal rule
+   */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+   * Remove the gap between audio, canvas, iframes,
+   * images, videos and the bottom of their containers:
+   * https://github.com/h5bp/html5-boilerplate/issues/440
+   */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+   * Remove default fieldset styles.
+   */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+   * Allow only vertical resizing of textareas.
+   */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+/* ==========================================================================
+     Helper classes
+     ========================================================================== */
+/*
+   * Hide visually and from screen readers
+   */
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+   * Extends the .sr-only class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+   * Hide visually and from screen readers, but maintain layout
+   */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+:root {
+  --primary-color: #ff6200;
+  --primary-color-dark: #be3600;
+  --dark-color: #121212;
+  --gray-color: #929292;
+  --light-grey-color: #878787;
+  --dark-grey-color: #222222;
+  --header-accent-bg: #ff6d12;
+  --header-gray-bg: #f2f5f6;
+  --white-color: #fff;
+  --primary-font: 'Oswald', sans-serif;
+  --secondary-font: 'Lato', sans-serif;
+}
+
+body {
+  padding: 0;
+  font-family: var(--secondary-font);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+h3, h6, hr {
+  padding: 0;
+  margin: 0;
+}
+
+textarea, input {
+  padding: 0;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header .colored {
+  color: var(--primary-color-dark);
+}
+
+header .top-header {
+  background-color: var(--header-accent-bg);
+  padding: 8px 0;
+}
+
+header .top-header .call-us {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+header .top-header .call-us .colored {
+  margin-right: 4px;
+}
+
+header .top-header .auth-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .top-header .auth-links li {
+  margin-top: 4px;
+}
+
+header .top-header .auth-links li a {
+  color: var(--white-color);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+header .top-header .auth-links li a.colored {
+  color: var(--primary-color-dark);
+}
+
+header .top-header .auth-links li + li {
+  margin-left: 8px;
+}
+
+header .main-header {
+  background-color: var(--header-gray-bg);
+  padding: 8px 0;
+}
+
+header .main-header .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+}
+
+header .main-header .logo a {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-family: var(--primary-font);
+  font-weight: 600;
+}
+
+header .main-header .logo a .dark {
+  color: var(--dark-color);
+}
+
+header .main-header .logo .toggle-menu-btn {
+  display: block;
+  width: 32px;
+  padding: 8px;
+}
+
+header .main-header .logo .toggle-menu-btn .bar {
+  display: block;
+  height: 3px;
+  background-color: var(--dark-color);
+  border-radius: 1px;
+}
+
+header .main-header .logo .toggle-menu-btn .bar + .bar {
+  margin-top: 6px;
+}
+
+header .main-header.show-menu .links {
+  height: auto;
+}
+
+header .main-header .links {
+  background-color: #e0e0e0;
+  margin: 8px -16px -8px;
+  height: 0;
+  overflow: hidden;
+}
+
+header .main-header .links ul {
+  padding: 16px 0;
+}
+
+header .main-header .links ul li a {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: var(--secondary-font);
+  display: block;
+  padding: 16px;
+  color: var(--dark-color);
+  text-transform: uppercase;
+}
+
+header .main-header .links ul li.has-sub .sub-menu {
+  padding: 0;
+  padding-left: 16px;
+}
+
+header .main-header .links ul li.has-sub .sub-menu a {
+  display: inline-block;
+  padding: 0 8px;
+  line-height: 18px;
+  margin-bottom: 6px;
+  border-left: 2px solid var(--primary-color);
+}
+
+.article {
+  margin-bottom: 2rem;
+}
+
+.article .up-row {
+  padding: 20px 0;
+}
+
+.article .up-row .breadcrumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article .up-row .breadcrumbs li a {
+  color: var(--gray-color);
+  font-size: .7rem;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.article .up-row .breadcrumbs li .dark-grey {
+  color: var(--dark-grey-color);
+  font-weight: 600;
+}
+
+.article .down-row h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.article .down-row p {
+  font-size: 0.8rem;
+  color: var(--light-grey-color);
+}
+
+.contacts .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts .row .col-left {
+  width: 100%;
+}
+
+.contacts .row .col-left .contact-us {
+  padding: 0 8rem 2rem 0;
+}
+
+.contacts .row .col-left .contact-us .full-width {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts .row .col-left .contact-us .full-width .half-width {
+  margin-bottom: 8px;
+}
+
+.contacts .row .col-left .contact-us #name,
+.contacts .row .col-left .contact-us #message {
+  width: 100%;
+  position: relative;
+  border: 1px solid #ededed;
+  padding: 6px;
+  margin-bottom: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f6f6f6;
+  color: #878787;
+  font-size: .8rem;
+  border-radius: 2px;
+}
+
+.contacts .row .col-left .contact-us #phone,
+.contacts .row .col-left .contact-us #email {
+  width: 100%;
+  border: 1px solid #ededed;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f6f6f6;
+  color: #878787;
+  font-size: .8rem;
+  border-radius: 2px;
+}
+
+.contacts .row .col-left .contact-us #submit {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: .7rem;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.contacts .row .col-right {
+  width: 100%;
+}
+
+.contacts .row h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+.contacts .row hr {
+  margin-bottom: 1rem;
+  height: 4px;
+  background-color: #525252;
+}
+
+.contacts .row h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #595959;
+}
+
+.contacts .row .reach-us p {
+  font-weight: 400;
+  font-size: .8rem;
+  color: #595959;
+  margin-bottom: 24px;
+}
+
+.contacts .row #black {
+  padding: 12px 14px;
+  background-color: black;
+  color: white;
+  margin-right: 5px;
+}
+
+.contacts .row #light {
+  padding: 12px 14px;
+  background-color: grey;
+  color: white;
+  margin-right: 5px;
+}
+
+/* small screens */
+@media only screen and (min-width: 576px) {
+  /* Style adjustments for viewports that meet the condition */
+  .container .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .container .row {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .main-header .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+/* medium screens */
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports that meet the condition */
+  header .main-header .container .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 992px) {
+  /* Style adjustments for viewports that meet the condition */
+  header .container {
+    margin: 0 10rem;
+  }
+  header .main-header .container .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .main-header .logo .toggle-menu-btn {
+    display: none;
+  }
+  header .main-header .links {
+    height: auto;
+    margin: 0;
+    background-color: transparent;
+    overflow: visible;
+  }
+  header .main-header .links ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  header .main-header .links ul li {
+    display: block;
+    position: relative;
+  }
+  header .main-header .links ul li a:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    visibility: hidden;
+  }
+  header .main-header .links ul li.has-sub {
+    padding-right: 4px;
+  }
+  header .main-header .links ul li.has-sub:hover > .sub-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .main-header .links ul li.has-sub .sub-menu {
+    display: none;
+    padding: 8px 0;
+    top: 44px;
+    right: 0;
+    position: absolute;
+    z-index: 999;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: var(--white-color);
+    border: solid 1px black;
+    -webkit-transform: translate(90%, 0);
+            transform: translate(90%, 0);
+  }
+  header .main-header .links ul li.has-sub .sub-menu li a {
+    border: none;
+    white-space: nowrap;
+    padding: 0 16px;
+    padding-right: 24px;
+  }
+  header .main-header .links ul li.has-sub .sub-menu li:after {
+    right: 16px;
+  }
+  header .main-header .links ul li.has-sub .sub-menu .sub-menu {
+    top: 10px;
+    right: 0;
+  }
+  header .main-header .links ul li:hover > a {
+    font-weight: 600;
+  }
+  header .main-header .links ul li:hover > a:after {
+    visibility: visible;
+  }
+  .article {
+    margin: 0 10rem 2rem 10rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contacts .container .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0 10rem;
+  }
+  .contacts .container .row .col-left {
+    width: 60%;
+  }
+  .contacts .container .row .col-right {
+    width: 40%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
